@@ -1,0 +1,4 @@
+/etc/init.d/networking restart
+
+ip link set eth0 up
+ip address add 10.0.3.1/28 dev eth0

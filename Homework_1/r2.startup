@@ -1,0 +1,5 @@
+/etc/init.d/networking restart
+iptables -t nat -A POSTROUTING -o eth2 -j MASQUERADE
+
+ip route add 192.168.4.0/28 via 1.0.0.2
+ip route add 10.0.3.0/28 via 1.0.0.5
