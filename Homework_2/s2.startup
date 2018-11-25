@@ -1,0 +1,33 @@
+/etc/init.d/networking restart
+
+# Create ssh keys
+echo -e '\n\n\n' | ssh-keygen
+pwd
+cp /root/.ssh/id_rsa.pub /hostlab
+
+# SSH
+/etc/init.d/ssh restart
+mkdir /home/ssh_user
+useradd ssh_user -d /home/ssh_user
+chown ssh_user:ssh_user /home/ssh_user
+echo -e 'user\nuser\n' | passwd ssh_user
+mkdir /home/ssh_user/.ssh
+chown ssh_user:ssh_user /home/ssh_user/.ssh
+chmod 700 /home/ssh_user/.ssh
+touch /home/ssh_user/.ssh/authorized_keys
+chown ssh_user:ssh_user /home/ssh_user/.ssh/authorized_keys
+chmod 600 /home/ssh_user/.ssh/authorized_keys
+
+while [ ! -e /hostlab/id_rsa_pc1.pub ]
+do
+	sleep 1
+done
+
+cat /hostlab/id_rsa_pc1.pub > /home/ssh_user/.ssh/authorized_keys
+
+while [ ! -e /hostlab/id_rsa_r4.pub ]
+do
+	sleep 1
+done
+
+cat /hostlab/id_rsa_r4.pub > /home/ssh_user/.ssh/authorized_keys

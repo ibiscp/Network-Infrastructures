@@ -1,0 +1,42 @@
+/etc/init.d/networking restart
+/etc/init.d/quagga restart
+
+ip link set eth0 up
+ip address add 1.0.1.19/31 dev eth0
+
+# SSH
+/etc/init.d/ssh restart
+mkdir /home/homework_user
+useradd homework_user -d /home/homework_user
+chown homework_user:homework_user /home/homework_user
+echo -e 'user\nuser\n' | passwd homework_user
+mkdir /home/homework_user/.ssh
+chown homework_user:homework_user /home/homework_user/.ssh
+chmod 700 /home/homework_user/.ssh
+touch /home/homework_user/.ssh/authorized_keys
+chown homework_user:homework_user /home/homework_user/.ssh/authorized_keys
+chmod 600 /home/homework_user/.ssh/authorized_keys
+
+while [ ! -e /hostlab/id_rsa.pub ]
+do
+	sleep 1
+done
+
+cat /hostlab/id_rsa.pub > /home/homework_user/.ssh/authorized_keys
+
+# Firewall
+# Clear iptables
+iptables -F
+iptables -X
+
+# Set default policy to ACCEPT
+iptables -P INPUT ACCEPT
+iptables -P OUTPUT ACCEPT
+iptables -P FORWARD ACCEPT
+
+# Allow SSH FORWARD
+iptables -A FORWARD -p tcp --dport 22 -j ACCEPT
+iptables -A FORWARD -p tcp --sport 22 -j ACCEPT
+
+# Drop all the rest to TCP
+iptables -A FORWARD -p tcp -j DROP

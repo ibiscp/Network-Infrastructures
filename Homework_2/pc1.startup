@@ -1,0 +1,18 @@
+/etc/init.d/networking restart
+
+# Create ssh keys
+echo -e '\n\n\n' | ssh-keygen
+pwd
+cp /root/.ssh/id_rsa.pub /hostlab/id_rsa_pc1.pub
+
+# Copy startup file to be executed after login
+#mkdir /etc/profile.d
+#cp /hostlab/pc1_login.sh /etc/profile.d/
+#chmod +x /etc/profile.d/pc1_login.sh
+
+#mkdir ~/.config/autostart
+#cp /hostlab/pc1_login.sh ~/.config/autostart/
+#chmod +x ~/.config/autostart/pc1_login.sh
+
+#echo "sleep 10" >> ~/.bashrc
+#echo "ssh -q -o "StrictHostKeyChecking no" -NL 9000:localhost:8000 ssh_user@s2 &" >> ~/.bashrc
