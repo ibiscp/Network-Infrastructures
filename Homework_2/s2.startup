@@ -23,11 +23,11 @@ do
 	sleep 1
 done
 
-cat /hostlab/id_rsa_pc1.pub > /home/ssh_user/.ssh/authorized_keys
+cat /hostlab/id_rsa_pc1.pub >> /home/ssh_user/.ssh/authorized_keys
 
 while [ ! -e /hostlab/id_rsa_r4.pub ]
 do
 	sleep 1
 done
 
-cat /hostlab/id_rsa_r4.pub > /home/ssh_user/.ssh/authorized_keys
+cat /hostlab/id_rsa_r4.pub >> /home/ssh_user/.ssh/authorized_keys

@@ -36,3 +36,14 @@ do
 done
 
 cat /hostlab/id_rsa.pub > /home/homework_user/.ssh/authorized_keys
+
+# Remote port forwarding
+# WARNING: Needs to be executed after login, I could not fix it, I am not using the VM, I installed netkit from scratch, I don't know if this is the problem.
+
+echo "Waiting"
+sleep 20
+echo "Waiting finished"
+
+echo "Executing ssh command"
+ssh -q -o "StrictHostKeyChecking no" -nNT -R 9000:localhost:8000 ssh_user@s2 &
+echo "ssh command finished"

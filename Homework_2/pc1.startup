@@ -5,14 +5,13 @@ echo -e '\n\n\n' | ssh-keygen
 pwd
 cp /root/.ssh/id_rsa.pub /hostlab/id_rsa_pc1.pub
 
-# Copy startup file to be executed after login
-#mkdir /etc/profile.d
-#cp /hostlab/pc1_login.sh /etc/profile.d/
-#chmod +x /etc/profile.d/pc1_login.sh
+# Local Port Forwarding
+# WARNING: Needs to be executed after login, I could not fix it, I am not using the VM, I installed netkit from scratch, I don't know if this is the problem. 
 
-#mkdir ~/.config/autostart
-#cp /hostlab/pc1_login.sh ~/.config/autostart/
-#chmod +x ~/.config/autostart/pc1_login.sh
+echo "Waiting"
+sleep 20
+echo "Waiting finished"
 
-#echo "sleep 10" >> ~/.bashrc
-#echo "ssh -q -o "StrictHostKeyChecking no" -NL 9000:localhost:8000 ssh_user@s2 &" >> ~/.bashrc
+echo "Executing ssh command"
+ssh -q -o "StrictHostKeyChecking no" -nNT -L 9000:localhost:8000 ssh_user@s2 &
+echo "ssh command finished"
