@@ -6,12 +6,6 @@ pwd
 cp /root/.ssh/id_rsa.pub /hostlab/id_rsa_pc1.pub
 
 # Local Port Forwarding
-# WARNING: Needs to be executed after login, I could not fix it, I am not using the VM, I installed netkit from scratch, I don't know if this is the problem. 
-
-echo "Waiting"
-sleep 20
-echo "Waiting finished"
-
-echo "Executing ssh command"
-ssh -q -o "StrictHostKeyChecking no" -nNT -L 9000:localhost:8000 ssh_user@s2 &
-echo "ssh command finished"
+until ping -c1 s2 &> /dev/null; do :;done
+ssh-keyscan -t rsa s2 > /root/.ssh/known_hosts
+ssh -nNT -L 9000:localhost:8000 ssh_user@s2 &

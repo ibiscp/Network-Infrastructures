@@ -3,7 +3,7 @@
 # Create ssh keys
 echo -e '\n\n\n' | ssh-keygen
 pwd
-cp /root/.ssh/id_rsa.pub /hostlab
+cp /root/.ssh/id_rsa.pub /hostlab/id_rsa_s2.pub
 
 # SSH
 /etc/init.d/ssh restart
@@ -23,11 +23,9 @@ do
 	sleep 1
 done
 
-cat /hostlab/id_rsa_pc1.pub >> /home/ssh_user/.ssh/authorized_keys
+cat /hostlab/id_rsa_pc1.pub > /home/ssh_user/.ssh/authorized_keys
 
-while [ ! -e /hostlab/id_rsa_r4.pub ]
-do
-	sleep 1
-done
-
-cat /hostlab/id_rsa_r4.pub >> /home/ssh_user/.ssh/authorized_keys
+# Remote port forwarding
+until ping -c1 r4 &> /dev/null; do :;done
+ssh-keyscan -t rsa r4 > /root/.ssh/known_hosts
+ssh -nNT -R 9000:localhost:8000 homework_user@r4 &

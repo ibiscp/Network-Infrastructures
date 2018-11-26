@@ -17,9 +17,9 @@ touch /home/homework_user/.ssh/authorized_keys
 chown homework_user:homework_user /home/homework_user/.ssh/authorized_keys
 chmod 600 /home/homework_user/.ssh/authorized_keys
 
-while [ ! -e /hostlab/id_rsa.pub ]
+while [ ! -e /hostlab/id_rsa_s2.pub ]
 do
 	sleep 1
 done
 
-cat /hostlab/id_rsa.pub > /home/homework_user/.ssh/authorized_keys
+cat /hostlab/id_rsa_s2.pub > /home/homework_user/.ssh/authorized_keys
