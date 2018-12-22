@@ -1,0 +1,13 @@
+/etc/init.d/networking restart
+
+# VPN (client)
+cp /hostlab/client1.key /root/
+cp /hostlab/client1.crt /root/
+cp /hostlab/ca.crt /root/
+
+until ping -c1 pc8 &> /dev/null; do :;done
+cd /root/
+ls
+openvpn client.conf &
+
+echo "nameserver 20.0.1.5" > /etc/resolv.conf

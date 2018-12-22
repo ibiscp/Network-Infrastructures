@@ -1,0 +1,30 @@
+/etc/init.d/networking restart
+
+# VPN (server)
+#cd /usr/share/doc/openvpn/examples/easy-rsa/2.0/
+#. ./vars
+#./clean-all
+
+#while [ ! -e [ /hostlab/ca.crt && /hostlab/ca.key ] ]
+#do
+#	sleep 1
+#done
+
+#cp /hostlab/ca.crt /hostlab/ca.key keys/
+
+#printf "\n\n\n\n\n\n\n\n\nyy" | ./build-key-server server
+#./build-dh
+#printf "\n\n\n\n\n\n\n\n\nyy" | ./build-key client1
+
+#cd keys/
+#mv server.key server.crt dh1024.pem client1.key client1.crt /hostlab/
+
+cd /hostlab/
+cp server.key server.crt ca.crt dh1024.pem /root/
+
+until ping -c1 pc4 &> /dev/null; do :;done
+cd /root/
+ls
+openvpn server.conf &
+
+echo "nameserver 20.0.1.5" > /etc/resolv.conf

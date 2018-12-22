@@ -1,0 +1,29 @@
+$ORIGIN exam.edu.
+$TTL 2d
+@ IN SOA ns.exam.edu. hostmaster.exam.edu. (
+    2012032200 ; serial 
+    28 ; refresh 
+    14 ; retry 
+    3600000 ; expire
+    0 ; negative cache ttl 
+)
+
+@   	   IN      NS      ns
+ns         IN      A       20.0.1.5
+r1	   IN	   A       1.0.1.8
+r2	   IN	   A       1.0.1.12
+r3	   IN	   A       1.0.1.6
+r4	   IN	   A       1.0.1.18
+r5	   IN	   A       1.0.1.17
+ns.rome.exam.edu	IN	A	192.168.1.5
+ns.paris.exam.edu	IN	A	192.168.2.5
+
+$ORIGIN rome.exam.edu.
+
+@   	   IN      NS      ns.rome.exam.edu.
+ns         IN      A       192.168.1.5
+
+$ORIGIN paris.exam.edu.
+
+@   	   IN      NS      ns.paris.exam.edu.
+ns         IN      A       192.168.2.5

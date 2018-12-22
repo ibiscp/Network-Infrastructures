@@ -1,0 +1,10 @@
+/etc/init.d/networking restart
+/etc/init.d/bind start
+
+# VPN (certification authority)
+cd /usr/share/doc/openvpn/examples/easy-rsa/2.0/
+. ./vars
+./clean-all
+#yes '' | ./build-ca
+#cd keys/
+#cp ca.crt ca.key /hostlab/

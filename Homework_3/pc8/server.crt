@@ -1,0 +1,74 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 1 (0x1)
+        Signature Algorithm: sha1WithRSAEncryption
+        Issuer: C=US, ST=CA, L=SanFrancisco, O=Fort-Funston, CN=Fort-Funston CA/emailAddress=me@myhost.mydomain
+        Validity
+            Not Before: Dec 21 03:30:28 2018 GMT
+            Not After : Dec 18 03:30:28 2028 GMT
+        Subject: C=US, ST=CA, L=SanFrancisco, O=Fort-Funston, CN=server/emailAddress=me@myhost.mydomain
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+            RSA Public Key: (1024 bit)
+                Modulus (1024 bit):
+                    00:b7:3c:d8:75:30:78:69:7f:1a:c7:8b:45:2c:02:
+                    80:20:7d:2b:09:32:aa:c2:d7:82:d0:e9:a9:ba:40:
+                    0f:34:aa:82:07:23:0e:86:27:7d:18:5a:9a:a0:ee:
+                    bf:82:b8:bd:16:b1:55:db:5b:59:e5:61:27:29:6d:
+                    34:7f:ec:37:65:1f:2e:49:eb:e3:da:dc:ec:2d:9f:
+                    1b:79:da:02:4e:c8:7d:ed:a8:ad:20:ac:c5:5b:59:
+                    d9:b8:68:68:63:f9:71:26:e4:ff:52:8f:49:45:77:
+                    41:6f:ee:9c:29:f9:e8:9e:7b:e7:96:16:22:3b:60:
+                    d0:a7:45:08:1e:89:63:a5:f1
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Basic Constraints: 
+                CA:FALSE
+            Netscape Cert Type: 
+                SSL Server
+            Netscape Comment: 
+                Easy-RSA Generated Server Certificate
+            X509v3 Subject Key Identifier: 
+                4C:14:11:A9:C0:7D:22:62:3F:6F:D5:32:A5:FF:87:97:3B:15:DC:DF
+            X509v3 Authority Key Identifier: 
+                keyid:84:B6:47:2B:8B:84:98:55:B4:D2:93:D0:66:6B:45:7D:9B:F2:EE:D8
+                DirName:/C=US/ST=CA/L=SanFrancisco/O=Fort-Funston/CN=Fort-Funston CA/emailAddress=me@myhost.mydomain
+                serial:FE:06:05:B8:97:90:5E:95
+
+            X509v3 Extended Key Usage: 
+                TLS Web Server Authentication
+            X509v3 Key Usage: 
+                Digital Signature, Key Encipherment
+    Signature Algorithm: sha1WithRSAEncryption
+        84:bc:3f:8a:5f:63:5c:70:8a:77:4c:5a:99:3b:11:36:5f:9f:
+        aa:4d:67:96:be:ce:5f:07:6d:5d:ea:bd:9b:2d:a7:7f:4f:f3:
+        07:2a:d0:cd:a1:4b:bc:84:78:90:e2:e6:5e:5e:7d:4f:65:b2:
+        34:74:b4:43:fd:85:e4:5f:3e:89:13:42:b4:84:eb:07:19:8d:
+        f5:2d:c8:81:42:76:2e:ca:f2:5a:b3:e5:c8:e8:d7:1d:41:4d:
+        f8:c9:3f:b0:86:88:db:00:8f:5c:70:91:5e:f4:6c:50:aa:6f:
+        02:9b:e0:ef:ef:83:73:ff:d5:a2:84:96:be:6f:17:cf:2b:92:
+        f4:99
+-----BEGIN CERTIFICATE-----
+MIID0DCCAzmgAwIBAgIBATANBgkqhkiG9w0BAQUFADCBhTELMAkGA1UEBhMCVVMx
+CzAJBgNVBAgTAkNBMRUwEwYDVQQHEwxTYW5GcmFuY2lzY28xFTATBgNVBAoTDEZv
+cnQtRnVuc3RvbjEYMBYGA1UEAxMPRm9ydC1GdW5zdG9uIENBMSEwHwYJKoZIhvcN
+AQkBFhJtZUBteWhvc3QubXlkb21haW4wHhcNMTgxMjIxMDMzMDI4WhcNMjgxMjE4
+MDMzMDI4WjB8MQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0ExFTATBgNVBAcTDFNh
+bkZyYW5jaXNjbzEVMBMGA1UEChMMRm9ydC1GdW5zdG9uMQ8wDQYDVQQDEwZzZXJ2
+ZXIxITAfBgkqhkiG9w0BCQEWEm1lQG15aG9zdC5teWRvbWFpbjCBnzANBgkqhkiG
+9w0BAQEFAAOBjQAwgYkCgYEAtzzYdTB4aX8ax4tFLAKAIH0rCTKqwteC0OmpukAP
+NKqCByMOhid9GFqaoO6/gri9FrFV21tZ5WEnKW00f+w3ZR8uSevj2tzsLZ8bedoC
+Tsh97aitIKzFW1nZuGhoY/lxJuT/Uo9JRXdBb+6cKfnonnvnlhYiO2DQp0UIHolj
+pfECAwEAAaOCAVYwggFSMAkGA1UdEwQCMAAwEQYJYIZIAYb4QgEBBAQDAgZAMDQG
+CWCGSAGG+EIBDQQnFiVFYXN5LVJTQSBHZW5lcmF0ZWQgU2VydmVyIENlcnRpZmlj
+YXRlMB0GA1UdDgQWBBRMFBGpwH0iYj9v1TKl/4eXOxXc3zCBugYDVR0jBIGyMIGv
+gBSEtkcri4SYVbTSk9Bma0V9m/Lu2KGBi6SBiDCBhTELMAkGA1UEBhMCVVMxCzAJ
+BgNVBAgTAkNBMRUwEwYDVQQHEwxTYW5GcmFuY2lzY28xFTATBgNVBAoTDEZvcnQt
+RnVuc3RvbjEYMBYGA1UEAxMPRm9ydC1GdW5zdG9uIENBMSEwHwYJKoZIhvcNAQkB
+FhJtZUBteWhvc3QubXlkb21haW6CCQD+BgW4l5BelTATBgNVHSUEDDAKBggrBgEF
+BQcDATALBgNVHQ8EBAMCBaAwDQYJKoZIhvcNAQEFBQADgYEAhLw/il9jXHCKd0xa
+mTsRNl+fqk1nlr7OXwdtXeq9my2nf0/zByrQzaFLvIR4kOLmXl59T2WyNHS0Q/2F
+5F8+iRNCtITrBxmN9S3IgUJ2LsryWrPlyOjXHUFN+Mk/sIaI2wCPXHCRXvRsUKpv
+Apvg7++Dc//VooSWvm8XzyuS9Jk=
+-----END CERTIFICATE-----

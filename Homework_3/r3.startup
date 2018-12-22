@@ -1,0 +1,38 @@
+/etc/init.d/quagga restart
+
+ip link set eth0 up
+ip address add 1.0.1.5/31 dev eth0
+
+ip link set eth1 up
+ip address add 1.0.1.6/31 dev eth1
+
+ip link set eth2 up
+ip address add 1.0.1.14/31 dev eth2
+
+ip link set eth3 up
+ip address add 20.0.1.4/31 dev eth3
+
+ip route add default via 1.0.1.15
+
+# SSH
+/etc/init.d/ssh restart
+mkdir /home/d_user
+useradd d_user -d /home/d_user
+chown d_user:d_user /home/d_user
+echo -e 'user\nuser\n' | passwd d_user
+mkdir /home/d_user/.ssh
+chown d_user:d_user /home/d_user/.ssh
+chmod 700 /home/d_user/.ssh
+touch /home/d_user/.ssh/authorized_keys
+chown d_user:d_user /home/d_user/.ssh/authorized_keys
+chmod 600 /home/d_user/.ssh/authorized_keys
+
+while [ ! -e /hostlab/id_rsa_s1.pub ]
+do
+	sleep 1
+done
+
+cat /hostlab/id_rsa_s1.pub > /home/d_user/.ssh/authorized_keys
+
+# DNS
+echo "nameserver 20.0.1.5" > /etc/resolv.conf

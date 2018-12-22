@@ -1,0 +1,15 @@
+$ORIGIN paris.exam.edu.
+$TTL 2d
+@ IN SOA ns.paris.exam.edu. hostmaster.paris.exam.edu. (
+    2012032200 ; serial 
+    28 ; refresh 
+    14 ; retry 
+    3600000 ; expire
+    0 ; negative cache ttl 
+)
+
+@   	   IN      NS      ns
+ns         IN      A       192.168.2.5
+pc8	   IN	   A       192.168.2.4
+
+

@@ -1,0 +1,7 @@
+ip link set eth0 up
+ip address add 20.0.1.5/31 dev eth0
+
+ip r add default via 20.0.1.4
+
+/etc/init.d/bind start
+

@@ -1,0 +1,3 @@
+/etc/init.d/networking restart
+
+echo "nameserver 20.0.1.5" > /etc/resolv.conf

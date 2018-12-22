@@ -1,0 +1,15 @@
+$ORIGIN rome.exam.edu.
+$TTL 2d
+@ IN SOA ns.rome.exam.edu. hostmaster.rome.exam.edu. (
+    2012032201 ; serial 
+    28 ; refresh 
+    14 ; retry 
+    3600000 ; expire
+    0 ; negative cache ttl 
+)
+
+@   	   IN      NS      ns
+ns         IN      A       192.168.1.5
+pc4	   IN	   A       192.168.1.4
+
+

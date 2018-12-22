@@ -1,0 +1,7 @@
+/etc/init.d/networking restart
+/etc/init.d/bind start
+
+# Create ssh key
+echo -e '\n\n\n' | ssh-keygen
+pwd
+cp /root/.ssh/id_rsa.pub /hostlab/id_rsa_s1.pub
