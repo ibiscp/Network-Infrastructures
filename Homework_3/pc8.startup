@@ -27,4 +27,11 @@ cd /root/
 ls
 openvpn server.conf &
 
+# DNS
 echo "nameserver 20.0.1.5" > /etc/resolv.conf
+
+# Apache
+#echo "Listen 8080" >> /etc/apache2/ports.conf
+sed -i 's/80/8080/g' /etc/apache2/sites-enabled/000-default
+sed -i 's/80/8080/g' /etc/apache2/ports.conf
+/etc/init.d/apache2 start

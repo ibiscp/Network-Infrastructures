@@ -55,3 +55,6 @@ iptables -A FORWARD -p tcp --sport 1194 -j ACCEPT
 
 # DNS
 echo "nameserver 20.0.1.5" > /etc/resolv.conf
+
+# Allow reply from r7
+iptables -A FORWARD -s 20.0.1.3 -j ACCEPT

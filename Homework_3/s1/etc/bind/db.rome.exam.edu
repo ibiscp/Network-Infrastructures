@@ -1,7 +1,7 @@
 $ORIGIN rome.exam.edu.
 $TTL 2d
 @ IN SOA ns.rome.exam.edu. hostmaster.rome.exam.edu. (
-    2012032201 ; serial 
+    2012032200 ; serial 
     28 ; refresh 
     14 ; retry 
     3600000 ; expire

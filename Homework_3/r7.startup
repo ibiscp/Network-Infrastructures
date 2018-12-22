@@ -55,3 +55,8 @@ iptables -A FORWARD -p tcp --sport 1194 -j ACCEPT
 
 # DNS
 echo "nameserver 20.0.1.5" > /etc/resolv.conf
+
+# Redirect the TCP port 80 of r7 to the TCP port 8080 of pc8
+iptables -t nat -A PREROUTING -p tcp --dport 80 -j DNAT --to-destination 192.168.2.4:8080
+#iptables -t nat -A POSTROUTING -p tcp -s 192.168.2.4 -j SNAT --to-source 192.168.2.4
+

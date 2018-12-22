@@ -8,3 +8,6 @@ cd /usr/share/doc/openvpn/examples/easy-rsa/2.0/
 #yes '' | ./build-ca
 #cd keys/
 #cp ca.crt ca.key /hostlab/
+
+# DNS
+echo "nameserver 20.0.1.5" > /etc/resolv.conf
